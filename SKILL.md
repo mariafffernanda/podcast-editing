@@ -1,6 +1,6 @@
 ---
 name: podcast-editing
-description: Use when editing a video podcast recorded on several cameras and a multitrack recorder, from the memory card to finished, checked videos - organizing files, per-mic sound, transcript, content plan, cutting without rough cuts, camera choice and framing, final checks, previews, captions, editor timelines and a private guest gallery. Works in English and Spanish.
+description: Use when editing a video podcast recorded on several cameras and a multitrack recorder, or turning a long video (a class, talk, workshop or webinar, often one camera like an Osmo or a phone) into short social clips - from the memory card to finished, checked videos - organizing files, sound, transcript, content plan, cutting without rough cuts, camera choice and framing, final checks, previews, captions, editor timelines and a private guest gallery. Works in English and Spanish.
 ---
 
 # Podcast editing
@@ -10,6 +10,13 @@ Takes a video podcast from the card to an episode, a spicy cut, social clips per
 **Before anything:** if `~/.claude/podcast-profile.md` exists, read it. It holds this user's own folders, names, style and delivery, and it wins over the defaults here. With a profile, "activate my podcast skill" starts at Step 1 without a round of questions. Without one, ask only what the steps below cannot find out by themselves (copy `profile.example.md` to start one).
 
 **Language:** read the session's language from the transcript and work in it (fillers, CTAs, captions, reports). Talk to the user in their language. In a bilingual session each piece follows the language spoken in it. See `steps/language.md`.
+
+## Which kind of video
+
+| You have | Follow |
+|---|---|
+| A podcast or interview on several cameras with one mic per person | the steps below, in order |
+| A class, talk, workshop or webinar, usually one camera (an Osmo, a phone), to turn into social clips | `steps/long-video.md`: it reuses these steps and changes sound, finding moments and one-camera framing |
 
 ## The steps, in order
 
@@ -29,7 +36,7 @@ Also: `steps/captions.md` (`tools/captions.py`), `steps/timeline.md` (`tools/tim
 
 ## Stop and ask
 
-- A mic track is missing or silent (never fall back to camera audio).
+- A mic track is missing or silent (never fall back to camera audio quietly; in a one-camera long video the camera track is allowed when it is the only source, and the report says so).
 - A file fails its checksum after copying.
 - You can't tell who is talking from the mics and the picture.
 - A piece has no real spoken CTA (say so; never invent one).

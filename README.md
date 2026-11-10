@@ -2,12 +2,14 @@
 
 A Claude Code skill that takes a video podcast from the memory card to finished, checked videos: an episode, a spicy cut, social clips per person, team clips, LinkedIn clips, stories and a transcript. It also comes with a private guest gallery you can deploy.
 
+It also turns any long video, like a recorded class, a talk or a webinar filmed on one camera, into short social clips with the same care: every clip opens on a hook, keeps whole sentences and ends on a real line. See [`steps/long-video.md`](steps/long-video.md).
+
 Every rule in it comes from a mistake made on real sessions. The full list is in [`lessons.md`](lessons.md).
 
 ## What you need
 
 - Claude Code
-- A conversation recorded on 1 to 4 cameras (each camera saved as its own file) and a recorder with one track per mic, like a RØDECaster
+- A conversation recorded on 1 to 4 cameras (each camera saved as its own file) and a recorder with one track per mic, like a RØDECaster, or a long video from one camera (an Osmo, a phone)
 - A Mac or Linux computer with Python 3.11+ and ffmpeg
 
 ## Install
@@ -29,8 +31,8 @@ To skip the questions on every new session, copy [`profile.example.md`](profile.
 | | |
 |---|---|
 | `SKILL.md` | the steps in order, with what to stop and ask about |
-| `steps/` | one file per step: organize, sound, transcript, content plan, cutting, cameras, final check, delivery, gallery |
-| `tools/` | small tested Python tools: checksum copies, mic map and sync drift, cut lists, join checks, the final report card, captions (SRT), timelines for DaVinci, Premiere and Final Cut (FCPXML) |
+| `steps/` | one file per step: organize, sound, transcript, content plan, cutting, cameras, final check, delivery, gallery, plus `long-video.md` for classes and talks |
+| `tools/` | small tested Python tools: checksum copies, mic map and sync drift, cut lists, join checks, the final report card, captions (SRT), timelines for DaVinci, Premiere and Final Cut (FCPXML), clip-length moments that start and end on whole sentences, and a vertical crop that follows a speaker who walks |
 | `gallery/` | a guest gallery website: a page per guest behind their own password |
 | `lessons.md` | what went wrong and the rule it became |
 
