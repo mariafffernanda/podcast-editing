@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.DS_Store
+node_modules/
+.vercel/
+.env*
+gallery/public/g/
+gallery/public/index.html
+gallery/public/entrar/

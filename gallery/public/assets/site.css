@@ -1,0 +1,24 @@
+:root { --bg: #faf8f5; --ink: #1d1b19; --mute: #6b655e; --line: #e6e0d8; --accent: #1f6f5c; --card: #fff; }
+@media (prefers-color-scheme: dark) { :root { --bg: #151413; --ink: #f2eee8; --mute: #a49d94; --line: #2c2926; --accent: #6cc4a8; --card: #1d1b19; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 40px 16px 64px; }
+.center { text-align: center; max-width: 420px; padding-top: 18vh; }
+h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.15; margin: 0 0 6px; }
+.show { color: var(--accent); font-weight: 600; letter-spacing: .02em; margin: 0 0 4px; }
+.sub { color: var(--mute); margin: 0 0 28px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; align-items: start; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.card video, .card .ph { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.card.v video, .card.v .ph { aspect-ratio: 9 / 16; }
+.meta { padding: 14px 16px 16px; }
+.kind { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--mute); }
+.meta h3 { font-size: 17px; margin: 4px 0 8px; }
+.cap { font-size: 14px; color: var(--mute); margin: 0 0 10px; white-space: pre-line; }
+.dl, .copy, .login button { display: inline-block; font: inherit; font-size: 14px; padding: 8px 12px; border-radius: 8px; cursor: pointer; text-decoration: none; }
+.dl, .login button { background: var(--accent); color: #fff; border: 0; }
+.copy { background: none; border: 1px solid var(--line); color: var(--ink); margin: 0 8px 8px 0; }
+.login { display: grid; gap: 14px; text-align: left; margin-top: 24px; }
+.login label { display: grid; gap: 6px; font-weight: 600; }
+.login input { font: inherit; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--ink); }
+.err { color: #b3261e; margin: 0; }

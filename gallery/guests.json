@@ -1,0 +1,29 @@
+{
+  "show": "My Podcast",
+  "host": "Your Name",
+  "lang": "en",
+  "guests": [
+    {
+      "slug": "alex-rivera",
+      "name": "Alex Rivera",
+      "session": "Episode 1",
+      "transcript": "",
+      "pieces": [
+        {
+          "title": "Full episode",
+          "kind": "episode",
+          "preview": "/media/demo-horizontal.mp4",
+          "download": "https://drive.google.com/",
+          "caption": ""
+        },
+        {
+          "title": "The first client who said no",
+          "kind": "social",
+          "preview": "/media/demo-vertical.mp4",
+          "download": "https://drive.google.com/",
+          "caption": "The first client who said no taught me more than the first ten who said yes."
+        }
+      ]
+    }
+  ]
+}

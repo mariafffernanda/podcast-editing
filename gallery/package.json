@@ -1,0 +1,6 @@
+{
+  "name": "podcast-guest-gallery",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test" }
+}
