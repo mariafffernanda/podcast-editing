@@ -47,3 +47,20 @@ def test_offset_and_drift():
     off, p = audio.fit_drift(offs)
     assert abs(off - lag) < 0.001
     assert abs(p - ppm) < 5
+
+
+def test_drift_cli_prints_json(tmp_path):
+    # The CLI once crashed writing numpy floats as JSON on a real session.
+    import json, subprocess, sys
+    from pathlib import Path
+    n = 60 * SR
+    ref = rng.standard_normal(n).astype(np.float32)
+    other = np.concatenate([np.zeros(int(0.05 * SR), np.float32), ref[:-int(0.05 * SR)]])
+    sf.write(tmp_path / "ref.wav", ref * 0.3, SR)
+    sf.write(tmp_path / "other.wav", other * 0.3, SR)
+    tool = Path(__file__).resolve().parents[1] / "tools" / "audio.py"
+    out = subprocess.run([sys.executable, str(tool), "drift", str(tmp_path / "ref.wav"), str(tmp_path / "other.wav")],
+                         capture_output=True, text=True, check=True).stdout
+    res = json.loads(out)
+    assert abs(res["offset_s"] - 0.05) < 0.002
+    assert res["worst_fit_ms"] < 5

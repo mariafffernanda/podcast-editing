@@ -113,6 +113,6 @@ if __name__ == "__main__":
         tr = int(sys.argv[sys.argv.index("--track") + 1]) - 1 if "--track" in sys.argv else None
         offs = offsets(mono16(sys.argv[2]), mono16(sys.argv[3], tr), 16000)
         off, ppm = fit_drift(offs)
-        worst = max(abs(l - (off - ppm / 1e6 * t)) for t, l in offs)
-        print(json.dumps({"offset_s": round(off, 4), "drift_ppm": round(ppm, 2), "worst_fit_ms": round(worst * 1000, 1),
-                          "points": [[round(t, 1), round(l, 4)] for t, l in offs]}))
+        worst = float(max(abs(l - (off - ppm / 1e6 * t)) for t, l in offs))
+        print(json.dumps({"offset_s": round(float(off), 4), "drift_ppm": round(float(ppm), 2), "worst_fit_ms": round(worst * 1000, 1),
+                          "points": [[round(float(t), 1), round(float(l), 4)] for t, l in offs]}))
