@@ -101,7 +101,14 @@ def mono16(path: str, track: int | None = None) -> np.ndarray:
     return x
 
 
+USAGE = """usage:
+  audio.py map <recorder.wav | folder of one wav per mic>    who talks on which track
+  audio.py drift <camera_clock.wav> <recorder.wav> [--track N]    offset and drift, recorder vs camera"""
+
 if __name__ == "__main__":
+    if len(sys.argv) < 3 or sys.argv[1] not in ("map", "drift"):
+        print(USAGE)
+        sys.exit(0 if len(sys.argv) > 1 and sys.argv[1] in ("-h", "--help") else 2)
     if sys.argv[1] == "map":
         sr, x = load_tracks(sys.argv[2])
         check_tracks(x)

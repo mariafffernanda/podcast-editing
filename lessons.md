@@ -22,3 +22,6 @@ Every rule in this skill came from one of these. Add a row each time something g
 | Clips opened with context nobody cares about | open on the hook |
 | A checker passed videos it couldn't read | test every check on a known failure |
 | Renders from working copies looked soft | render finals from the originals |
+| A camera drive dropped out for a moment during the copy and every file after it failed | copy the card first, before any other reading, and re-run failed files; the md5 check catches what a drop-out breaks |
+| Pausing a copy to the network drive froze every other program writing there | never pause a copy to a network drive; keep in-progress work files on the computer and copy them over when done |
+| The transcript slowed to a crawl while a second big job ran | one big job at a time, or split the audio at a silence and run two halves, never two jobs that swap memory |
